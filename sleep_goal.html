@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<body>
+<script src="d3.v3.min.js"></script>
+<script src="moment.js"></script>
+<link rel="stylesheet" type="text/css" href="calendar-heatmap.css">
+<link rel="icon" href="favicon.ico">
+<script src="calendar-heatmap.js"></script>
+<script>
+d3.csv("https://dl.dropboxusercontent.com/s/zrc0uezbnlyrk8u/sleep_goal.csv", function(error, csv) {
+  for(var i = 0; i < csv.length; i++){
+    csv[i].date = moment(csv[i].date).toDate();
+    csv[i].count = parseFloat(csv[i].hours)
+  }
+
+  var chart1 = calendarHeatmap()
+                .data(csv)
+                .selector('#chart')
+                .colorRange(['#D8E6E7', '#218380'])
+                .startDate(new Date(2018, 0, 1))
+                .tooltipEnabled(true)
+                .tooltipUnit(
+                  [
+                    {min: 0, unit: 'hours'},
+                    {min: 1, max: 1, unit: 'hours'},
+                    {min: 2, max: 'Infinity', unit: 'hours'}
+                  ]
+                )
+                .colorRange(['#FF3333', '#00CC00']);
+  chart1();  // render the chart
+});
+
+</script>
+<div id="chart"></div>

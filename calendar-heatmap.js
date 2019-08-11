@@ -28,7 +28,7 @@ function calendarHeatmap() {
     More: 'More'
   };
 
-  // setters and getters
+  // setters and getters.
   chart.data = function (value) {
     if (!arguments.length) { return data; }
     data = value;

@@ -10,7 +10,7 @@ function calendarHeatmap() {
   var MONTH_LABEL_PADDING = 6;
   var now = moment().endOf('day').toDate();
   var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
-  var startDate = 2019-01-01;
+  var startDate = 2019-04-01;
   var data = [];
   var max = null;
   var colorRange = ['#D8E6E7', '#218380'];

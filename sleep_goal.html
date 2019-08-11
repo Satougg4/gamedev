@@ -16,12 +16,12 @@ d3.csv("https://dl.dropboxusercontent.com/s/zrc0uezbnlyrk8u/sleep_goal.csv", fun
                 .data(csv)
                 .selector('#chart')
                 .colorRange(['#D8E6E7', '#218380'])
-                .startDate(new Date(2018, 0, 1))
+                .startDate(new Date(2019, 8, 11))
                 .tooltipEnabled(true)
                 .tooltipUnit(
                   [
-                    {min: 0, unit: 'hours'},
-                    {min: 1, max: 1, unit: 'hours'},
+                    {min: 0, unit: 'goals'},
+                    {min: 1, max: 1, unit: 'goal met'},
                     {min: 2, max: 'Infinity', unit: 'hours'}
                   ]
                 )
